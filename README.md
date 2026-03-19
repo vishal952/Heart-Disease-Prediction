@@ -1,114 +1,155 @@
-# Heart Disease Prediction using Logistic Regression
+Heart Disease Prediction using Machine Learning
+Project Overview
 
-## Project Description
+This project builds a binary classification machine learning model to predict whether a person has heart disease based on medical and lifestyle features.
+The model is developed using Logistic Regression and follows a complete machine learning workflow including data preprocessing, feature encoding, scaling, model training, evaluation, and exploratory data analysis (EDA).
 
-This machine learning project predicts whether a patient is likely to have heart disease based on medical and lifestyle features.
+Problem Statement
 
-The goal of the project is to understand classification modeling, feature influence, and evaluation techniques using Logistic Regression.
+Heart disease is one of the major health risks worldwide.
+The goal of this project is to use patient data such as age, cholesterol level, heart rate, stress level, smoking habits, and alcohol intake to predict the probability of heart disease.
 
-This project demonstrates a complete machine learning workflow from data analysis to model evaluation.
+Dataset
 
----
+The dataset used in this project is a synthetic heart disease dataset containing multiple patient attributes.
 
-## Dataset Features
+Example Features
 
-The model uses the following input variables:
+Age
 
-* Age → Age of the patient
-* Sex → Gender (0 = Female, 1 = Male)
-* ChestPainType → Type of chest pain
-* RestingBP → Resting blood pressure
-* Cholesterol → Serum cholesterol level
-* FastingBS → Fasting blood sugar (0 = Normal, 1 = High)
-* MaxHR → Maximum heart rate achieved
-* ExerciseAngina → Exercise-induced angina
-* Oldpeak → ST depression induced by exercise
-* ST_Slope → Slope of peak exercise ST segment
+Gender
 
-Target Variable:
+Heart Rate
 
-* HeartDisease
+Smoking Status
 
-  * 0 → No heart disease
-  * 1 → Heart disease present
+Stress Level
 
----
+Cholesterol Total
 
-## Project Workflow
+Alcohol Intake
 
-1. Data loading and inspection
-2. Exploratory data visualization
-3. Feature and target selection
-4. Train-test split
-5. Feature scaling using StandardScaler
-6. Logistic Regression model training
-7. Model evaluation using:
+Other medical indicators
 
-   * Accuracy Score
-   * Confusion Matrix
-   * Classification Report
-8. Manual prediction testing
-9. Model saving using Pickle
+Target Variable
 
----
+Heart_Disease
 
-## Visualization Used
+0 → No disease
 
-* Scatter plots to understand feature vs disease relation
-* Correlation heatmap to observe feature relationships
+1 → Disease present
 
----
+Machine Learning Workflow
+1. Data Loading
 
-## Model Performance
+Dataset is loaded using Pandas.
 
-The model performance is evaluated using classification metrics such as accuracy, precision, recall and F1-score to understand prediction quality.
+2. Data Cleaning
 
----
+Missing values checked using isnull()
 
-## Key Insights
+Missing categorical values handled using "Unknown" category
 
-* Higher Oldpeak values are associated with increased risk of heart disease
-* Lower maximum heart rate can indicate potential cardiac issues
-* Chest pain type and exercise-induced angina influence prediction
-* Age and cholesterol also contribute to disease probability
+3. Feature and Target Separation
 
----
+Independent variables → X
 
-## Technologies Used
+Dependent variable → y
 
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
-* Scikit-learn
+4. Categorical Encoding
 
----
+One-Hot Encoding applied using ColumnTransformer
 
-## How to Run the Project
+Converts text categories into numerical format
 
-1. Download the dataset and project notebook/script
-2. Install required libraries:
+5. Train-Test Split
 
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn
-```
+Dataset split into 70% training and 30% testing
 
-3. Run the notebook or Python script
-4. Observe model evaluation results and predictions
+Ensures model evaluation on unseen data
 
----
+6. Feature Scaling
 
-## Future Improvements
+StandardScaler used to standardize feature values
 
-* Try Decision Tree and Random Forest models
-* Perform hyperparameter tuning
-* Deploy the model using Streamlit or Flask
-* Use real clinical datasets for advanced analysis
+Improves convergence and model performance
 
----
+7. Model Training
 
-## Author
+Logistic Regression model used for binary classification
 
-Machine Learning Practice Project
-Heart Disease Prediction using Logistic Regression
+Learns relationship between patient features and disease risk
+
+8. Prediction
+
+Model predicts disease presence on test dataset
+
+9. Model Evaluation
+
+Performance measured using:
+
+Accuracy Score
+
+Confusion Matrix
+
+Classification Report (Precision, Recall, F1-Score)
+
+10. Exploratory Data Analysis
+
+Scatter plots to analyze feature-target relationship
+
+Correlation heatmap to detect strong predictors and multicollinearity
+
+Technologies Used
+
+Python
+
+NumPy
+
+Pandas
+
+Matplotlib
+
+Seaborn
+
+Scikit-learn
+
+Results
+
+The Logistic Regression model successfully learns patterns from patient data and predicts heart disease status with measurable classification performance.
+
+How to Run
+
+Clone the repository
+
+git clone https://github.com/yourusername/heart-disease-prediction.git
+
+Install required libraries
+
+pip install numpy pandas matplotlib seaborn scikit-learn
+
+Open the Jupyter Notebook
+
+jupyter notebook
+
+Run all cells sequentially
+
+Future Improvements
+
+Try advanced models (Random Forest, XGBoost, SVM)
+
+Perform hyperparameter tuning
+
+Handle class imbalance
+
+Build a deployment interface (Streamlit / Flask)
+
+Improve feature engineering
+
+Author
+
+Vishal
+
+License
+
+This project is for educational and learning purposes.
