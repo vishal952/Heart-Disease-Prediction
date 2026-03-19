@@ -122,7 +122,7 @@ How to Run
 
 Clone the repository
 
-git clone https://github.com/yourusername/heart-disease-prediction.git
+git clone https://github.com/vishal952/heart-disease-prediction.git
 
 Install required libraries
 
